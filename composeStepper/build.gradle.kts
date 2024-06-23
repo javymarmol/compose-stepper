@@ -53,7 +53,7 @@ publishing {
     repositories {
         maven {
             name = "ComposeStepper"
-            url = uri("https://github.com/javymarmol/compose-stepper/")
+            url = uri("https://maven.pkg.github.com/javymarmol/compose-stepper")
             credentials {
                 username = githubProperties["gpr.usr"] as String? ?: System.getenv("USERNAME")
                 password = githubProperties["gpr.key"] as String? ?: System.getenv("TOKEN")
@@ -64,8 +64,8 @@ publishing {
     publications {
         create<MavenPublication>("gpr") {
             run {
-                groupId = "com.javymarmol.compose_stepper"
-                artifactId = "ComposeStepper"
+                groupId = "com.javymarmol.compose"
+                artifactId = "compose-stepper"
                 version = "0.0.1"
                 artifact("build/outputs/aar/composeStepper-release.aar")
             }
